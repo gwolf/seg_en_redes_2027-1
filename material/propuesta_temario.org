@@ -1,0 +1,189 @@
+#+TITLE: Seguridad en Redes: Protocolos, Perímetro y Análisis de Despliegues Reales
+#+SUBTITLE: Propuesta de plan de estudios
+#+AUTHOR: Dr. Gunnar Wolf / Posgrado en Ciencia e Ingeniería de la Computación
+#+INSTITUTE: Universidad Nacional Autónoma de México
+#+DATE:
+#+LANGUAGE: es
+#+OPTIONS: toc:nil num:1
+
+* Seguridad en Redes: Protocolos, Perímetro y Análisis de Despliegues Reales
+
+En este archivo muestro la /propuesta del plan de estudios/ para la
+materia, pero al mismo tiempo va esta advertencia:
+
+Esta es una propuesta para un plan de estudios de una /materia optativa/
+(formalmente: /Temas selectos/), y en el [[https://pcic.unam.mx/][PCIC]] los grupos normalmente son
+reducidos (~5 personas).
+
+Mi intención es que en el transcurso del semestre llevemos este documento
+como /eje conductor/, y como /lineamiento de temática/, pero no que lo
+tomemos al pie de la letra — es por eso que:
+
+- Le pido a los alumnos que registren [[../entregas/intereses/README.md][en este repositorio]] una /pequeña
+  presentación personal/ y la temática que les interesa desarrollar
+  (proyecto de tesis, algún otro tema que llame su atención).
+- Iremos registrando una /bitácora de temas abordados/ para ayudar a
+  recordar y docuemntar por qué /caminos torcidos/ ha ido nuestra materia 😉
+
+* Contacto con el docente
+
+Para lo que requieran, pueden encontrarme aquí:
+
+- Nombre :: Gunnar Wolf
+- Correo :: gwolf@gwolf.org
+- Ubicación :: Instituto de Investigaciones Económicas UNAM (Secretaría Técnica)
+- Teléfono (fijo, oficina) :: 55-5623-0154
+
+* Datos generales del curso
+
+- Campo de conocimiento :: Ingeniería de Cómputo / Redes
+- Créditos :: 8
+- Caracter :: Optativa
+- Horas totales :: 48
+- Semanas totales :: 16
+- Horas por semana :: 3
+- Tipo :: Teórica/práctica
+- Modalidad :: Presencial
+- Requisitos Académicos previos :: Conocimientos básicos de redes TCP/IP
+  (nivel licenciatura) y administración de sistemas.
+- Líneas de investigación :: Seguridad de redes, protocolos de
+  comunicación, seguridad en infraestructura.
+
+* Licenciamiento
+
+Ver [[../COPYING.md][archivo con las condiciones de licenciamiento]].
+
+* Objetivo General
+
+El alumno analizará los fundamentos de seguridad en redes TCP/IP, evaluará
+vulnerabilidades por capa, diseñará estrategias de seguridad perimetral en
+entornos tradicionales y en la nube, y desarrollará habilidades para el
+análisis de protocolos reales, con el fin de aplicar medidas de protección
+y monitoreo en infraestructuras de red contemporáneas.
+
+** Objetivos específicos
+
+1. Identificar vulnerabilidades en las capas 2, 3 y 4 del modelo TCP/IP,
+   aplicando mitigaciones correspondientes, y comprender la manera en que
+   pueden ser explotadas.
+2. Analizar la seguridad de protocolos de aplicación en texto plano (SMTP,
+   IMAP, HTTP) mediante herramientas de interceptación y modificación de
+   tráfico.
+3. Examinar protocolos binarios sobre UDP (DNS, DHCP, NTP, TFTP) para
+   comprender sus vectores de ataque clásicos y modernos (amplificación,
+   envenenamiento, spoofing).
+4. Analizar protocolos modernos (QUIC, gRPC, WebRTC, TLS 1.3, WireGuard),
+   comprendiendo la diferencia con los anteriores, y su impacto en la
+   seguridad de red.
+5. Diseñar e implementar estrategias de seguridad perimetral (firewalls,
+   zonas, DMZ) tanto en infraestructura local como en entornos de nube
+   (Security Groups, NACLs, firewalls como servicio).
+6. Comprender e implementar sistemas de detección y monitoreo (IDS/IPS,
+   honeypots, SIEM) aplicados a casos reales.
+
+* Índice Temático
+
+| Unidad | Tema                                                          | Horas | Teóricas | Prácticas |
+|--------+---------------------------------------------------------------+-------+----------+-----------|
+|      1 | Fundamentos TCP/IP y seguridad por capa                       |     6 |        6 |         0 |
+|      2 | Análisis de protocolos I (texto/TCP): SMTP, IMAP, HTTP        |     9 |        5 |         4 |
+|      3 | Análisis de protocolos II (binario/UDP): DNS, DHCP, NTP, TFTP |     9 |        5 |         4 |
+|      4 | Análisis de protocolos III (modernos y seguros)               |     9 |        5 |         4 |
+|      5 | Seguridad perimetral: tradicional y en la nube                |     9 |        5 |         4 |
+|      6 | Detección, monitoreo y respuesta (IDS/IPS, SIEM, honeypots)   |     6 |        3 |         3 |
+|--------+---------------------------------------------------------------+-------+----------+-----------|
+|        | Total                                                         |    48 |       29 | 19        |
+
+* Contenido detallado
+
+** Unidad 1. Fundamentos TCP/IP y seguridad por capa
+
+1. Modelo TCP/IP vs OSI desde perspectiva de seguridad. Puntos débiles
+   históricos y de diseño.
+2. Seguridad en capa de enlace: ARP spoofing, MAC flooding, VLAN hopping,
+   STP. Mitigaciones: 802.1X, DAI, port security.
+3. Seguridad en capa de red: IP spoofing, fragmentación maliciosa, opciones
+   IP, ataques con ICMP (smurf, redirect).
+4. Seguridad en capa de transporte: TCP handshake, SYN flood, RST attacks,
+   port scanning evasivo, mitigaciones (SYN cookies, connlimit).
+5. Computación en nube como contexto transversal: VPC, subnets, routing
+   tables, Internet Gateway, NAT Gateway.
+
+** Unidad 2. Análisis de protocolos I: texto sobre TCP
+
+1. SMTP (25, 465, 587): comandos verbatim, spoofing, open relays, STARTTLS
+   vs SMTPS, análisis de headers.
+2. IMAP (143, 993): autenticación plain text, ataques de replay, TLS
+   tunneling.
+3. HTTP (80, 8080, 8443): verbos, headers, cookies, HSTS, CSP, análisis con
+   curl y openssl s_client.
+4. Interceptación y modificación de tráfico de texto con proxy manual
+   (netcat, socat), TLS stripping.
+5. Patrones comunes de vulnerabilidad en protocolos de texto: inyección,
+   falta de validación, autenticación débil.
+
+** Unidad 3. Análisis de protocolos II: binario sobre UDP
+
+1. DNS (53): tipos de registros, amplificación, cache poisoning (Kaminsky),
+   tunneling, DoH/DoT.
+2. DHCP (67/68): rogue server, starvation, opciones maliciosas, DHCP
+   snooping.
+3. NTP (123): amplificación DDoS, monlist, autenticación NTP.
+4. TFTP (69): ausencia de autenticación, robo/configuración de
+   dispositivos.
+5. Herramientas de análisis binario (tcpdump, tshark, extracción de
+   campos).
+
+** Unidad 4. Análisis de protocolos III: diseñádos con seguridad en mente
+
+1. QUIC: UDP con TLS 1.3 integrado, streams, 0-RTT, multiplexación,
+   análisis con qlog.
+2. gRPC/Protobuf: serialización binaria sobre HTTP/2, implicaciones de
+   seguridad.
+3. WebRTC: ICE, STUN, TURN, DTLS, SRTP, perforación de NAT.
+4. IPSec (AH/ESP, modos transporte/túnel, IKE) vs WireGuard (crypto
+   routing, diseño minimalista).
+5. TLS 1.3 en profundidad: handshake reducido, 0-RTT (riesgos), cifrado de
+   certificados.
+6. Análisis de un protocolo desconocido a partir de una PCAP real.
+
+** Unidad 5. Seguridad perimetral: tradicional y en la nube
+
+1. Cortafuegos con estado (/stateful/) vs sin estado (/stateless/). Papel
+   de ambos en una estrategia integrada.
+2. inspección profunda de paquetes (DPI), filtrado por aplicación,
+   criterios de firewall con DPI.
+3. Zonas de seguridad y DMZ: diseño de red perimetral, /bastion hosts/.
+4. Seguridad perimetral en la nube: Security Groups vs NACLs
+   (AWS/Azure/GCP), AWS Network Firewall, Azure Firewall, WAF como
+   servicio.
+5. Microsegmentación: políticas por carga de trabajo, mallas de servicio
+   (ejemplo: /Cilium/Network Policies/ en Kubernetes).
+6. Construcción de reglas de firewall (~iptables~ / ~nftables~) y su
+   traducción a Security Groups.
+
+** Unidad 6. Monitoreo, detección y respuesta ante incidentes
+
+1. Fundamentos de detección: firmas vs anomalías, visibilidad y puntos de
+   observación.
+2. Estrategias de monitoreo: tráfico norte-sur vs este-oeste, logs,
+   metadata.
+3. Correlación y respuesta: contexto, enriquecimiento y acción.
+4. Sistemas /trampa/: el valor estratégico de los /honeypots/.
+5. Monitoreo en entornos dinámicos: contenedores, /cloud/ y autoescalado.
+
+* Bibliografía general
+
+1. G. A. Marin, "Network security basics," in IEEE Security & Privacy,
+   vol. 3, no. 6, pp. 68-72, Nov.-Dec. 2005, doi: 10.1109/MSP.2005.153.
+2. K. Cohn-Gordon,“A Formal Security Analysis of the Signal Messaging
+   Protocol”, Journal of Cryptology 2020,
+   https://doi.org/10.1007/s00145-020-09360-1
+3. Isla, M. et al., “No es magia: Interfaces y protocolos para las
+   videollamadas”, Derechos Digitales 2020,
+   https://www.derechosdigitales.org/wp-content/uploads/webrtc_es.pdf
+4. Estándares relevantes publicados por la IETF, incluyendo: RFC [[https://rfcinfo.com/rfc-5321/][5321]]
+   (SMTP), [[https://rfcinfo.com/rfc-9051/][9051]] (IMAP), [[https://rfcinfo.com/rfc-2616/][2616]] y [[https://rfcinfo.com/rfc-9110/][9110]] (HTTP), [[https://rfcinfo.com/rfc-1035/][1035]] y [[https://rfcinfo.com/rfc-8484/][8484]] (DNS), [[https://rfcinfo.com/rfc-2131/][2131]] y [[https://rfcinfo.com/rfc-2132/][2132]]
+   (DHCP), [[https://rfcinfo.com/rfc-9035/][9035]] y [[https://rfcinfo.com/rfc-8633/][8633]] (NTP), etc.
+5. M. Bishop, “Computer Security Art and Science, Second Edition”, Pearson
+   Education 2019
