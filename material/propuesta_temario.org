@@ -6,8 +6,6 @@
 #+LANGUAGE: es
 #+OPTIONS: toc:nil num:1
 
-* Seguridad en Redes: Protocolos, Perímetro y Análisis de Despliegues Reales
-
 En este archivo muestro la /propuesta del plan de estudios/ para la
 materia, pero al mismo tiempo va esta advertencia:
 
