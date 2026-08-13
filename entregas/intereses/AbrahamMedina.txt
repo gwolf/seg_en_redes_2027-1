@@ -1,0 +1,11 @@
+Hola ^^
+
+Mi nombre es Abraham Medina, soy egresado de la licenciatura en Física, de la Facultad de Ciencias de la UNAM. 
+
+Estoy en el área de Redes y Seguridad, y estoy trabajando con la Dra. Rocio Aldeco en un protocolo de Autenticación Anonimizada.
+
+Mi intereses en esta clase se debe a que me gustaría aprender más de ciberseguridad (tanto en el área defensiva como en la ofensiva). Actualmente me encuentró tomando cursos para certificarme como Pentester y, si todo sale bien, me encantaría dedicarme a esto de manera profesional.
+
+Me llama mucho la atención la seguridad perimetral, la detección de intrusos y la respuesta a incidentes, y veo que en el temario propuesto se tocan muchos de estos temas, cosa que me entusiasma bastante.
+
+Espero aprender mucho con usted. Muchas gracias ^^
