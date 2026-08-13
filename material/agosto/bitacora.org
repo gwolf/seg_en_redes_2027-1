@@ -1,0 +1,38 @@
+#+title: Bitácora de clases: Agosto 2026
+#+options: toc:1,num:nil
+
+* 2026.08.11
+** Temas
+1. Presentación del docente, presentación del curso, temas a cubrir y forma
+   de trabajo esperada
+2. Explorando lo que sabemos del funcionamiento /real/ de TCP/IP: ¿Cómo es
+   el ruteo /a gran escala/, cuando deja de ser /estrictamente jerárquico/?
+   - Mención del protocolo [[https://es.wikipedia.org/wiki/Border_Gateway_Protocol][BGP (Border Gateway Protocol)]]
+   - Concepto de /Sistemas Autónomos/; modelar Internet no como un árbol
+     (modelo de IP), sino como una /alberca de globos/
+3. Nuestros modelos de expectativas de privacidad están rotos: las
+   /cookies/ no son necesarias para identificar y rastrear a un usuario
+   específico (⇒ /[[https://kuber.studio/cookie/][I didn't set a cookie]]/)
+** Referencias
+- BGP:
+  - [[https://es.wikipedia.org/wiki/Border_Gateway_Protocol][Página de la Wikipedia en español]] (sí, la consideramos /referencia
+    suficiente/ para nuestro trabajo 😉)
+  - [[https://datatracker.ietf.org/doc/html/rfc1105][RFC 1105]] (de 1989; tomarlo como referencia y para entender la idea
+    básica; hoy en día habría que considerar [[https://datatracker.ietf.org/doc/html/rfc4271][RFC 4271]], de 2006, pero es
+    considerablemente más largo y complejo)
+- Micrositio /[[https://kuber.studio/cookie/][I didn't set a cookie]]/; [[https://github.com/Kuberwastaken/cookie][código fuente en GitHub]]
+** Entregas solicitadas al grupo
+- Presentaciones personales entregadas en [[../../entregas/intereses/][=entregas/intereses=]]
+
+
+* 2026.08.11
+** Temas
+** Referencias
+- [[https://www.geeksforgeeks.org/computer-networks/difference-between-osi-model-and-tcp-ip-model/][OSI and TCP/IP model]]
+- [[https://www.itu.int/rec/T-REC-X.200-199407-I/en][X.200 : Information technology - Open Systems Interconnection - Basic
+  Reference Model: The basic model]]
+- [[https://nanog.org/stories/articles/a-brief-history-of-the-internets-biggest-bgp-incidents/][A Brief History of the Internet’s Biggest BGP Incidents]] Doug Madory,
+  septiembre 2023
+- [[https://www.anapaya.net/blog/border-gateway-protocol-hijacking-examples-and-solutions][BGP hijacking examples: a timeline of real-world attacks (2017–2026)]]
+  Olivier Moll, junio 2026
+- Wikipedia: [[https://en.wikipedia.org/wiki/BGP_hijacking][BGP hijacking]] (secuestro BGP)
