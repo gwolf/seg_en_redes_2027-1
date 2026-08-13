@@ -36,3 +36,5 @@
 - [[https://www.anapaya.net/blog/border-gateway-protocol-hijacking-examples-and-solutions][BGP hijacking examples: a timeline of real-world attacks (2017–2026)]]
   Olivier Moll, junio 2026
 - Wikipedia: [[https://en.wikipedia.org/wiki/BGP_hijacking][BGP hijacking]] (secuestro BGP)
+- [[https://dl.acm.org/doi/10.1145/2659899][Why is it taking so long to secure internet routing?]], artículo publicado
+  en /Communications of the ACM/ en septiembre de 2014
