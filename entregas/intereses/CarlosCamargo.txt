@@ -1,0 +1,7 @@
+Hola, soy Carlos Camargo Romero, licenciado en ciencias computacionales y actualmente trabajo como devops enfocado en DNS en entornos cloud
+Actualmente estoy cursando la Maestria ya que me interesa mucho el area de seguridad en redes, en mi trabajo actual es algo con lo que me enfrennto a diario y muchas veces he sentido que una educacion formal me ayudaria a cerrar brechas en mi conocimiento
+Esta materia se me hizo interesante por que es algo como lo que yo hago, administrar y delimitar un sistema para mantenerlo seguro y funcionando
+El temario menciona que veremos sobre deteccion de intrusos, seguridad perimetral y administracion de sistemas e incidentes los cuales me parecen interesantes y me gustaria aprender mas sobre ese tema
+Muchas veces cuando estoy trabajando me encuentro con problemas de este tipo que terminan siendo una improvisacion por mi parte mas que una respuesta planneada y con fundamento, por lo que me gustaria ver metodologias para atacar estos problemas
+Actualmente mi tesis se centra en modelos de seguridad informatica por lo que ver mas modelos siempre es algo bueno
+Por ultimo mis intereses siempre han sido todo lo relacionado con las computadoras, la privacidad y como las computadoras afectan nuestro comportamiento y al mundo  
