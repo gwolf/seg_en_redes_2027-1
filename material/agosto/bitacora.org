@@ -27,6 +27,12 @@
 
 * 2026.08.11
 ** Temas
+- Seguimos abordando temas derivados de la /complejidad/ del ruteo hacia
+  los /límites/ entre TCP/IP, que es mucho más ampliamente comprendido, y
+  los protocolos de ruteo
+- Hablamos informalmente acerca de casos de /ARP Spoofing/ y de algunas
+  estrategias para evitarlo, pero también de los costos asociados (mayor
+  complejidad de administración de la red)
 ** Referencias
 - [[https://www.geeksforgeeks.org/computer-networks/difference-between-osi-model-and-tcp-ip-model/][OSI and TCP/IP model]]
 - [[https://www.itu.int/rec/T-REC-X.200-199407-I/en][X.200 : Information technology - Open Systems Interconnection - Basic
@@ -38,3 +44,11 @@
 - Wikipedia: [[https://en.wikipedia.org/wiki/BGP_hijacking][BGP hijacking]] (secuestro BGP)
 - [[https://dl.acm.org/doi/10.1145/2659899][Why is it taking so long to secure internet routing?]], artículo publicado
   en /Communications of the ACM/ en septiembre de 2014
+
+* 2026.08.18
+** Temas
+- Hoy mi compañero Víctor Manuel Peña ofreció darnos una presentación donde
+  detalla un poco a mayor profundidad de lo que hicimos hasta ahora los
+  protocolos de ruteo BGP (/Border Gateway Protocol/), RIP (/Router
+  Information Protocol/) y OSPF (/Open Shortest Path First/).
+** Referencias
