@@ -52,3 +52,44 @@
   protocolos de ruteo BGP (/Border Gateway Protocol/), RIP (/Router
   Information Protocol/) y OSPF (/Open Shortest Path First/).
 ** Referencias
+
+* 2026.08.20
+** Temas
+- Seguridad en capa de enlace: Las /secciones/ de la [[https://ieee802.org/][familia de estándares
+  IEEE 802]], y algunos específicamente relevantes para nuestra materia:
+  [[https://ieeexplore.ieee.org/document/9257130][Consideraciones de privacidad en tecnologías 802]]
+- Muchos switches implementan VLANs (/redes virtuales/) para segmentar el
+  tráfico de una red y aislar /dominios/ de diferentes niveles (no
+  confundir con... /dominios/ 😉)
+  - Pero si los switches permiten /puertos troncales/ (/trunk/), un cliente
+    /no-switch/ puede enviar paquetes 802.1Q y inyectar (o obtener) tráfico
+    destinado a otras VLANs.
+  - La configuración por omisión de muchos equipos es de /permitir la
+    negociación/ en todos los puertos...
+- [[https://www.networkacademy.io/ccna/network-security/dynamic-arp-inspection-dai][Dynamic ARP Inspection]] y [[https://www.networkacademy.io/ccna/network-security/port-security][Switchport port-security]]: implementaciones que
+  dificultan el envenenamiento de ARP... ¡Aunque tienen su costo en
+  complejidad!
+** Referencias
+Ojo: Varios de los estándares IEEE 802 requieren acceso desde una red
+académica (como Red UNAM).
+- [[https://ieee802.org/][Comité de estandarización LAN/MAN IEEE 802]]. Particularmente, el [[https://1.ieee802.org/][Grupo de
+  Trabajo 802.1]] cubre los temas de /Mantenimiento/, /Seguridad/ y /Redes
+  sensibles al tiempo/.
+  - Vale la pena entender la organización en /grupos de trabajo/, separando
+    en /tecnologías/ y /aspectos/ de esta amplia familia de estándares.
+  - [[https://1.ieee802.org/security/][Security Task Group]]
+  - [[https://1.ieee802.org/security/802e/][802E: Privacy Considerations for IEEE 802 Technologies]]
+  - [[https://ieeexplore.ieee.org/document/5409813][802.1X-2010 - IEEE Standard for Local and metropolitan area
+    networks--Port-Based Network Access Control]]
+  - [[https://ieeexplore.ieee.org/document/1678345][802.1AE-2006 - IEEE Standard for Local and Metropolitan Area Networks:
+    Media Access Control (MAC) Security]]
+  - [[https://www.ieee802.org/16/liaison/docs/80211-05_0123r1.pdf][802.11i Overview]] en formato (casi) presentación, de 2005. Vistazo
+    general al /presentar/ el mecanismo de autenticación/autorización WPA2
+    (como reemplazo de WEP)
+- Un documento que presenta un muy buen resumen del /campo/ de la seguridad
+  en redes inalámbricas (aunque tiene ya /casi 20 años de edad/) es el [[https://csrc.nist.gov/pubs/sp/800/97/final][NIST
+  SP 800-97]].
+- [[https://rikfarrow.com/Network/net0103.html][Rik Farrow: VLAN Insecurity. VLANs were created to isolate LANs, but not
+  for the purposes of security.]]
+- /White paper/ de SANS (2021): [[https://sansorg.egnyte.com/dl/9c6D3hvBpPRm][Virtual LAN Security: weaknesses and
+  countermeasures (Steve Rouiller)]]
