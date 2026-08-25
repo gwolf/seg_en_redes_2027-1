@@ -52,20 +52,13 @@
   protocolos de ruteo BGP (/Border Gateway Protocol/), RIP (/Router
   Information Protocol/) y OSPF (/Open Shortest Path First/).
 ** Referencias
+- [[./Enrutamiento.pdf][La presentación de Víctor: «Enrutamiento»]]
 
 * 2026.08.20
 ** Temas
 - Seguridad en capa de enlace: Las /secciones/ de la [[https://ieee802.org/][familia de estándares
   IEEE 802]], y algunos específicamente relevantes para nuestra materia:
   [[https://ieeexplore.ieee.org/document/9257130][Consideraciones de privacidad en tecnologías 802]]
-- Muchos switches implementan VLANs (/redes virtuales/) para segmentar el
-  tráfico de una red y aislar /dominios/ de diferentes niveles (no
-  confundir con... /dominios/ 😉)
-  - Pero si los switches permiten /puertos troncales/ (/trunk/), un cliente
-    /no-switch/ puede enviar paquetes 802.1Q y inyectar (o obtener) tráfico
-    destinado a otras VLANs.
-  - La configuración por omisión de muchos equipos es de /permitir la
-    negociación/ en todos los puertos...
 - [[https://www.networkacademy.io/ccna/network-security/dynamic-arp-inspection-dai][Dynamic ARP Inspection]] y [[https://www.networkacademy.io/ccna/network-security/port-security][Switchport port-security]]: implementaciones que
   dificultan el envenenamiento de ARP... ¡Aunque tienen su costo en
   complejidad!
@@ -89,7 +82,38 @@ académica (como Red UNAM).
 - Un documento que presenta un muy buen resumen del /campo/ de la seguridad
   en redes inalámbricas (aunque tiene ya /casi 20 años de edad/) es el [[https://csrc.nist.gov/pubs/sp/800/97/final][NIST
   SP 800-97]].
+
+* 2026.08.25
+** Temas
+- Cerrando los temas de la /capa de enlace/: El día de hoy, Vincent Bernat
+  publicó una [[https://vincent.bernat.ch/en/blog/2026-spanning-tree][introducción interactiva al /Spanning Tree Protocol/ (STP)]],
+  una /simulación de equipos de red/ que se ejecuta dentro del navegador,
+  con visualizaciones muy claras explicando los diferentes aspectos de
+  STP. Además, las simulaciones interactivas generan archivos de captura de
+  paquetes (=.pcap=) que permiten analizar cada uno de los mensajes que
+  forman parte de las simulaciones presentadas.
+
+  Además, Bernat presenta también un [[https://vincent.bernat.ch/en/blog/2026-spanning-tree-video][video no interactivo]] (25 minutos) en
+  que explica y va mostrando los diversos ejemplos.
+- Muchos switches implementan VLANs (/redes virtuales/) para segmentar el
+  tráfico de una red y aislar /dominios/ de diferentes niveles (no
+  confundir con... /dominios/ 😉)
+  - Pero si los switches permiten /puertos troncales/ (/trunk/), un cliente
+    /no-switch/ puede enviar paquetes 802.1Q y inyectar (o obtener) tráfico
+    destinado a otras VLANs.
+  - La configuración por omisión de muchos equipos es de /permitir la
+    negociación/ en todos los puertos...
+
+- Avanzando hacia arriba a la /capa de red/
+  - La /fragmentación en capa IP/, el manejo de /MTU/ (unidad máxima de
+    transmisión), y algunos ataques relacionados (prácticamente todos, de
+    interés únicamente histórico hoy en día): /Teardrop/, /Bonk/,
+    /Fragrouter, /Jolt2/, manipulación de TTL, /Nestea/, inundación
+    ICMP/UDP, /Ping of death/...
+** Referencias
 - [[https://rikfarrow.com/Network/net0103.html][Rik Farrow: VLAN Insecurity. VLANs were created to isolate LANs, but not
   for the purposes of security.]]
 - /White paper/ de SANS (2021): [[https://sansorg.egnyte.com/dl/9c6D3hvBpPRm][Virtual LAN Security: weaknesses and
   countermeasures (Steve Rouiller)]]
+- [[https://www.imperva.com/learn/ddos/ip-fragmentation-attack-teardrop/][Thales / Imperva: IP Fragmentation Attack]] Descripción somera pero clara y
+  breve listado de tipos de ataque de fragmentación
