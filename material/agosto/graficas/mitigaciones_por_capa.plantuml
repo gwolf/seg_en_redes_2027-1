@@ -1,0 +1,52 @@
+@startuml
+title Mitigaciones en capa de transporte - Mapa conceptual
+
+rectangle "Capa de transporte" {
+  rectangle "TCP" {
+    (SYN cookies) as sc
+    (SYN proxy) as sp
+    (SYN cache) as scache
+    (connlimit) as cl
+    (Aumentar backlog) as backlog
+    (Reducir retries) as retries
+  }
+  rectangle "UDP" {
+    (Rate limiting) as rl
+    (Filtrado de fragmentos) as frag
+    (Bloqueo de amplificación) as amp
+    (uRPF/ACL spoofing) as urpf
+  }
+  rectangle "SCTP" {
+    (Cookies obligatorias) as sctp_cookie
+    (Limit INIT/s) as sctp_limit
+    (AUTH para ASCONF) as sctp_auth
+  }
+}
+
+rectangle "Capa de red/Interfaz" {
+  (Filtrado de spoofing uRPF) as net1
+  (ACL en borde) as net2
+  (Rate-limit por IP) as net3
+}
+
+sc -down-> net1 : "requiere"
+sp -down-> net2 : "requiere"
+rl -down-> net3 : "requiere"
+
+note right of sc
+  Sysctl: net.ipv4.tcp_syncookies=1
+  Limitación: no soporta opciones
+end note
+
+note right of cl
+  Iptables: --connlimit-above N
+  Nftables: ct count over N
+end note
+
+note right of amp
+  DNS: limit recursion
+  NTP: disable monlist
+  SSDP: bloquear puerto 1900
+end note
+
+@enduml

@@ -1,0 +1,44 @@
+@startuml
+title Algoritmo de SYN cookie (Linux)
+
+start
+:Cliente envía SYN (src_ip, src_port, dst_ip, dst_port, seq_cli);
+
+:Servidor calcula cookie;
+
+note right
+  cookie = 
+    hash( src_ip + src_port + 
+          dst_ip + dst_port + 
+          secret + counter )
+  donde counter = tiempo en minutos
+  (tcp_syncookies_secret)
+end note
+
+:Servidor envía SYN-ACK con:
+- SEQ = cookie
+- ACK = seq_cli+1
+- NO guarda estado (no SYN-RCVD);
+
+:Cliente responde ACK (ACK = cookie+1, SEQ = seq_cli+1);
+
+:Servidor recibe ACK y valida:
+
+if (ACK-1 == cookie_y_ts_valida(ACK-1)) then (Sí)
+  :Reconstruye parámetros de conexión
+   (MSS, opciones codificadas en cookie)
+  :Crea entrada en TCB (ESTABLISHED)
+  :Conexión aceptada
+else (No)
+  :ACK inválido -> descartar
+  :(o posible ataque / retransmisión)
+endif
+
+:Nota: Opciones TCP (WS, SACK, etc.) 
+se pierden o se codifican
+parcialmente en los bits extra
+de la cookie;
+
+stop
+
+@enduml

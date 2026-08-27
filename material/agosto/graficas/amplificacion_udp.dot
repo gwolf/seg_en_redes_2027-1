@@ -1,0 +1,31 @@
+digraph udp_amplification {
+    rankdir=LR;
+    node [shape=box, style=filled, fillcolor=lightblue];
+    
+    subgraph cluster_attacker {
+        label="Atacante";
+        color=red;
+        A [label="Atacante\nIP spoofeada\norigen = Víctima"];
+    }
+    
+    subgraph cluster_amplifier {
+        label="Servidor amplificador";
+        color=orange;
+        DNS [label="DNS Recursor\n(puerto 53)"];
+        NTP [label="NTP Server\n(puerto 123)"];
+    }
+    
+    subgraph cluster_victim {
+        label="Víctima";
+        color=red;
+        V [label="Víctima\n(destino spoofeado)"];
+    }
+    
+    A -> DNS [label="Consulta ANY\n(40 bytes)\nsrc=Victima"];
+    DNS -> V [label="Respuesta amplificada\n(> 3000 bytes)\ndst=Victima"];
+    
+    A -> NTP [label="MONLIST\n(234 bytes)\nsrc=Victima"];
+    NTP -> V [label="Respuesta amplificada\n(> 4500 bytes)\ndst=Victima"];
+    
+    label="Factor amplificación: DNS 1:70, NTP 1:19";
+}

@@ -1,0 +1,23 @@
+@startuml
+title Handshake TCP normal y ataque SYN flood
+
+== Handshake normal ==
+CLIENT -> SERVER: SYN (SEQ=x)
+SERVER -> CLIENT: SYN-ACK (SEQ=y, ACK=x+1)
+CLIENT -> SERVER: ACK (SEQ=x+1, ACK=y+1)
+note right: ESTABLISHED
+
+== SYN flood (spoofing) ==
+ATTACKER -> SERVER: SYN (SEQ=a, SRC=spoofed)
+SERVER -> SPOOFED: SYN-ACK (SEQ=b, ACK=a+1)
+note right: Servidor entra en SYN-RCVD\nocupa cola SYN
+ATTACKER -> SERVER: SYN (SEQ=c, SRC=spoofed2)
+SERVER -> SPOOFED2: SYN-ACK (SEQ=d, ACK=c+1)
+note right: Cola SYN se llena\n(tcp_max_syn_backlog)
+
+== Conexión legítima bloqueada ==
+CLIENT -> SERVER: SYN (SEQ=e)
+SERVER --> CLIENT: (sin respuesta o descartada)
+note right: SYN-ACK no enviado\npor cola llena
+
+@enduml

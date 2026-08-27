@@ -1,0 +1,37 @@
+@startuml
+title Máquina de estados TCP - Ataques y eventos
+
+[*] --> CLOSED
+
+CLOSED --> LISTEN: passive open
+CLOSED --> SYN_SENT: active open (SYN)
+
+LISTEN --> SYN_RCVD: SYN recibido
+SYN_SENT --> ESTABLISHED: SYN-ACK recibido
+
+SYN_RCVD --> ESTABLISHED: ACK recibido
+SYN_RCVD --> LISTEN: RST recibido (ataque RST temprano)
+SYN_RCVD --> CLOSED: timeout (SYN flood)
+
+ESTABLISHED --> CLOSE_WAIT: FIN recibido
+ESTABLISHED --> CLOSED: RST recibido (ataque RST en sesión)
+ESTABLISHED --> FIN_WAIT_1: FIN enviado
+
+CLOSE_WAIT --> LAST_ACK: FIN enviado
+FIN_WAIT_1 --> FIN_WAIT_2: ACK recibido
+FIN_WAIT_1 --> CLOSING: ACK+FIN recibido
+FIN_WAIT_2 --> TIME_WAIT: FIN recibido
+LAST_ACK --> CLOSED: ACK recibido
+TIME_WAIT --> CLOSED: timeout
+
+note right of SYN_RCVD
+  SYN flood inunda esta transición
+  Cola SYN se agota
+end note
+
+note right of ESTABLISHED
+  RST injection cierra la conexión
+  Requiere secuencia/ack válidos
+end note
+
+@enduml

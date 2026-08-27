@@ -1,0 +1,30 @@
+digraph idle_scan {
+    rankdir=LR;
+    node [shape=box];
+    
+    subgraph cluster_attacker {
+        label="Atacante";
+        A [label="Atacante\n(no contacto directo con víctima)"];
+    }
+    
+    subgraph cluster_zombie {
+        label="Zombie (host intermedio)";
+        Z [label="Zombie\n(IPID incremental, sin tráfico)"];
+    }
+    
+    subgraph cluster_target {
+        label="Objetivo";
+        T [label="Víctima\n(puerto a escanear)"];
+    }
+    
+    A -> Z [label="1. SYN-ACK a zombie\n(observa IPID = N)"];
+    Z -> T [label="2. SYN spoofeado\ndesde zombie\na puerto objetivo"];
+    T -> Z [label="3. Respuesta:\n- Puerto abierto: SYN-ACK\n- Puerto cerrado: RST"];
+    Z -> A [label="4. SYN-ACK a atacante\n(IPID = N+1 o N+2)"];
+    
+    // note right of Z
+    //     "Si IPID = N+1 -> puerto cerrado
+    //     Si IPID = N+2 -> puerto abierto
+    //     (zombie envió RST o SYN-ACK)"
+    // end note;
+}

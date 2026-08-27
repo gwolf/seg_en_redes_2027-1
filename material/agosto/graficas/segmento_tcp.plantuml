@@ -1,0 +1,38 @@
+@startuml
+title Segmento TCP - Campos relevantes para ataques
+
+rectangle "Cabecera TCP (20-60 bytes)" {
+  rectangle "Puerto origen (16b)" as src
+  rectangle "Puerto destino (16b)" as dst
+  rectangle "Número de secuencia (32b)" as seq
+  rectangle "Número de ACK (32b)" as ack
+  rectangle "Offset (4b)" + "Reservado (6b)" + "Flags (6b)" as flags
+  rectangle "Ventana (16b)" as win
+  rectangle "Checksum (16b)" + "Urgente (16b)" as misc
+}
+
+rectangle flags as "Flags (6 bits)" #LightBlue {
+  rectangle URG
+  rectangle ACK
+  rectangle PSH
+  rectangle RST
+  rectangle SYN
+  rectangle FIN
+}
+
+note right of flags
+  - SYN: inicio conexión (handshake)
+  - RST: reset abrupto (ataque)
+  - ACK: confirmación
+  - FIN: cierre normal
+  - PSH: entrega inmediata
+  - URG: datos urgentes
+end note
+
+note bottom of seq
+  Secuencia es crítica para:
+  - Inyección RST (predecir o sniffear)
+  - SYN cookies (codificar estado)
+end note
+
+@enduml

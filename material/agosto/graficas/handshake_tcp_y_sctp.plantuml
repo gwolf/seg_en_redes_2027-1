@@ -1,0 +1,27 @@
+@startuml
+title Comparativa: Handshake TCP vs SCTP
+
+== TCP (3 vías, estado en servidor) ==
+CLIENT -> SERVER: SYN
+note right: Servidor guarda estado\n(SYN-RCVD)
+SERVER -> CLIENT: SYN-ACK
+CLIENT -> SERVER: ACK
+note right: ESTABLISHED
+
+== SCTP (4 vías, cookie obligatoria) ==
+CLIENT -> SERVER: INIT
+note right: Servidor NO guarda estado\nGenera cookie (MAC + TTL)
+SERVER -> CLIENT: INIT-ACK (con cookie)
+CLIENT -> SERVER: COOKIE-ECHO (devuelve cookie)
+note right: Servidor valida cookie\n(sin estado previo)
+SERVER -> CLIENT: COOKIE-ACK
+note right: Asociación ESTABLISHED
+
+== Ventaja SCTP ==
+note over CLIENT,SERVER
+  INIT flood: solo consume CPU
+  (cálculo de cookie), no memoria
+  Similar a SYN cookies pero nativo
+end note
+
+@enduml
