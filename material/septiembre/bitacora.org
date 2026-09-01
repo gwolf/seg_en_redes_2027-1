@@ -6,6 +6,19 @@
 Seguridad en capa de transporte TCP:
 - Barrido de puertos evasivo (FIN, NULL, XMAS, ACK, fragmentación TCP, IP
   decoy, barrido lento)
+
+  Hicimos una serie de barridos (normales y evasivos) empleando =nmap=, y
+  analizamos la técnica que utiliza cada uno de ellos con =wireshark=, así
+  como el tipo de información que cada uno nos puede ofrecer.
+  - [[./0901_TCP-Xmas.pcap][Scan simple]]
+  - [[./0901_ACK_scan.pcap][ACK scan]]
+  - [[./0901_SYN_scan.pcap][SYN scan]]
+  - [[./0901_TCP-Maimon_scan.pcap][Maimon scan]] (FIN+RST)
+  - [[./0901_TCP-NULL.pcap][NULL]] (sin opciones encendidas)
+  - [[./0901_TCP-Xmas.pcap][TCP Xmas]] (FIN+PSH+URG)
+  - [[./0901_TCP-URGACKPSHRSTSYNFIN.0901_TCP-Window_scan.pcap][URG+ACK+PSH+RST+SYN+FIN]]
+
+* 2026.09.03
 - Mitigaciones (SYN Cookies, connlimit, port knocking, tar pits...)
 UDP: Protocolo sin handshake.
 - UDP flood
