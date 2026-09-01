@@ -1,0 +1,36 @@
+#+title: Bitácora de clases: Septiembre 2026
+#+options: toc:1,num:nil
+
+* 2026.09.01
+** Temas
+Seguridad en capa de transporte TCP:
+- Barrido de puertos evasivo (FIN, NULL, XMAS, ACK, fragmentación TCP, IP
+  decoy, barrido lento)
+- Mitigaciones (SYN Cookies, connlimit, port knocking, tar pits...)
+UDP: Protocolo sin handshake.
+- UDP flood
+- barrido de puertos UDP
+- Captura de sesiones UDP
+- Desbordamientos en servicios UDP
+** Referencias
+- RFCs relevantes para este tema
+  - [[https://datatracker.ietf.org/doc/rfc7873/][RFC 7873: Domain Name System (DNS) Cookies]] (D. Eastlake,
+    M. Andrews, 2016) Para entender lo que vemos en el ataque de
+    amplificación UDP, mitigación mediante cookies en capa de aplicación.
+- Detección de la evasión en ataques de barridos de puertos
+  - [[https://dl.acm.org/doi/abs/10.1145/505733.505737][A review of port scanning techniques]] (Marco de Vivo, Eddy Carrasco,
+    Germinal Isern, Gabriela O. de Vivo, 1999) Artículo de revisión que
+    presenta las técnicas existentes al momenot de us publicación
+  - [[https://ieeexplore.ieee.org/abstract/document/8923028][Detecting Slow Port Scan Using Fuzzy Rule Interpolation]] (Mohammad
+    Almseidin, Mouhammd Al-Kasassbeh, Szilveszter Kovacs, 2019) Sistemas
+    IDS como SNORT no detectan “barridos lentos”. Este artículo presenta un
+    enfoque para la detección de este tipo de barridos empleando
+    “interpolación de reglas difusas”.
+  - [[https://ieeexplore.ieee.org/abstract/document/11160775][PortScout: A Communication Flow-Based Approach to Detect Port Scanning
+    Evasion Attacks]] (Muhammad Sangeen, Naveed Anwar Bhatti, Kashif
+    Kifayat, 2025)
+- Recursos informales
+  - [[https://nickneal.dev/posts/nmap-evasion-detection/][Evasive port scanning while on internal networks]] (Nick Neal,
+    junio 2026)
+  - Barrer los puertos UDP es /diferente/: [[https://nmap.org/book/scan-methods-udp-scan.html][Documentación sobre «UDP Scan»
+    de nmap]]

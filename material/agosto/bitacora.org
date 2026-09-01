@@ -120,21 +120,11 @@ académica (como Red UNAM).
 
 * 2026.08.27
 ** Temas
-Seguridad en capa de transporte:
-- TCP
-  - Handshake y estados
+Capa de transporte TCP:
+- Handshake y estados
+- Aspectos de seguridad:
   - SYN flood
   - Ataques de RST
-  - Barrido de puertos evasivo (FIN, NULL, XMAS, ACK, fragmentación TCP, IP
-    decoy, barrido lento)
-  - Mitigaciones (SYN Cookies, connlimit...)
-- UDP: Protocolo sin handshake.
-  - UDP flood
-  - barrido de puertos UDP
-  - Captura de sesiones UDP
-  - Desbordamientos en servicios UDP
-- SCTP
-  - (...)
 - [[./graficas/][Algunos diagramas /generados por LLM/ ilustrando aspectos mencionados]],
   tanto en formatos fuente (plantuml, graphviz) como en PNG
 ** Referencias
@@ -150,9 +140,6 @@ Seguridad en capa de transporte:
   - [[https://datatracker.ietf.org/doc/rfc4987/][RFC 4987: TCP SYN Flooding Attacks and Common Mitigations]]
     (W. Eddy, 2007) Describe el mecanismo de SYN flood, cache, cookies,
     limitaciones de cada mitigación y consideraciones de implementación.
-  - [[https://datatracker.ietf.org/doc/rfc7873/][RFC 7873: Domain Name System (DNS) Cookies]] (D. Eastlake,
-    M. Andrews, 2016) Para entender lo que vemos en el ataque de
-    amplificación UDP, mitigación mediante cookies en capa de aplicación.
 - Artículos recientes sobre SYN flood y mitigaciones
   - [[https://arxiv.org/abs/2603.06668][SDN-SYN PoW: Adaptive Ingress-Aware Defense with Non-Interactive PoW
     Against Volumetric SYN Floods]] (Wenyang Jia, Jingjing Wang, Xianneng
@@ -163,15 +150,3 @@ Seguridad en capa de transporte:
   - [[https://ieeexplore.ieee.org/abstract/document/11277505][A Constrained Multi-Objective Minimization Strategy for Distributed and
     Evasive TCP Port Scanning in Backbone Networks]]  (André McDonald, Graham
     Barbour, Danielle Badenhorst 2025)
-- Detección de la evasión en ataques de barridos de puertos
-  - [[https://dl.acm.org/doi/abs/10.1145/505733.505737][A review of port scanning techniques]] (Marco de Vivo, Eddy Carrasco,
-    Germinal Isern, Gabriela O. de Vivo, 1999) Artículo de revisión que
-    presenta las técnicas existentes al momenot de us publicación
-  - [[https://ieeexplore.ieee.org/abstract/document/8923028][Detecting Slow Port Scan Using Fuzzy Rule Interpolation]] (Mohammad
-    Almseidin, Mouhammd Al-Kasassbeh, Szilveszter Kovacs, 2019) Sistemas
-    IDS como SNORT no detectan “barridos lentos”. Este artículo presenta un
-    enfoque para la detección de este tipo de barridos empleando
-    “interpolación de reglas difusas”.
-  - [[https://ieeexplore.ieee.org/abstract/document/11160775][PortScout: A Communication Flow-Based Approach to Detect Port Scanning
-    Evasion Attacks]] (Muhammad Sangeen, Naveed Anwar Bhatti, Kashif
-    Kifayat, 2025)
