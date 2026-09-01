@@ -3,6 +3,6 @@
 - [Temario formal, propuesta original para el cursado](./propuesta_temario.org)
 - Bitácoras de cursado:
   - [Agosto](./agosto/bitacora.org)
-  - Septiembre
+  - [Septiembre](./septiembre/bitacora.org)
   - Octubre
   - Noviembre
