@@ -1,0 +1,91 @@
+* Análisis de seguridad de una arquitectura de red corporativa híbrida (on-premise + nube)
+
+Entregable para cubrir la unidad /“Fundamentos TCP/IP y seguridad por
+capa”/
+
+** Formato y extensión
+
+- Documento (PDF, LaTeX, Markdown — a elección suya) de máximo 5 páginas
+- Entrega individual, mediante un /pull request/
+- Fecha de entrega: /17 de septiembre/
+
+** Planteamiento
+
+Realiza un análisis de seguridad sobre una organización que opera en una
+/oficina rentada/ en un edificio cualquiera de una zona de lata densidad de
+oficinas de la Ciudad de México (piensa en el corredor
+Reforma/Insurgentes), con las siguientes características:
+
+- Red /on-premises/:
+  - Subred 192.168.10.0/24 (servidores: correo, ERP, servidor de
+    “productividad”/colaboración tipo Element / Mattermost).
+  - Subred 192.168.20.0/24 (estaciones de trabajo).
+  - Firewall perimetral /stateful/.
+  - Switch segmentado en VLANs (10: datos, 20: VoIP, 30: gestión).
+- Servidores en /nube privada virtual/ (VPC) genérica:
+  - Red virtual 10.0.0.0/16.
+  - Subred pública 10.0.1.0/24 (con gateway directamente a Internet)
+  - Subred privada de aplicaciones 10.0.2.0/24.
+  - Subred privada de base de datos 10.0.3.0/24.
+  - NAT Gateway desde la subred pública para dar salida desde las
+    direcciones RFC1918.
+- Conectividad: VPN site-to-site entre firewall on-premise y gateway de la
+  nube.
+
+*Nota:* Cuando se te ofrece un especificación general y /le faltan datos/,
+puedes /llenar los vacíos/ como te parezca más sensato 😉 ¿Quieres
+desarrollar con tecnología de algún VPC específico, algún firewall en
+particular o lo que sea? ¡Se vale!
+
+** Tareas a desarrollar
+
+
+1. *Diagrama de red, tal como se plantea*: Representar la arquitectura
+   completa con todos los elementos anteriores, incluyendo direccionamiento
+   y gateways.
+
+2. *Análisis de riesgos por capa*: Para cada capa que estudiamos,
+   identificar al menos 2 ataques del temario aplicables al caso. Por cada
+   uno: descripción, superficie de ataque específica, impacto (CIA),
+   probabilidad justificada.
+
+3. Propuesta de mitigaciones Por cada tipo de ataque, analizar si es
+   posible aplicar alguna mitigación (discutida en clase o no).
+
+4. Riesgos residuales
+
+   Enumerar al menos 3 riesgos que persisten tras las mitigaciones,
+   diferenciando qué incluiría en sus afectaciones al entornoo
+   /on-premises/, nube e interconexión. Recomendar acciones concretas.
+
+5. Pregunta abierta: *¿Cómo cambiaría el análisis* si la VPN sitio-a-sitio
+   se reemplaza por un enlace dedicado? Mencionar cambios en superficie de
+   ataque, mitigaciones en capa de enlace/red, y costo/beneficio en
+   seguridad.
+
+6. Sustentación bibliográfica (incluida en las secciones anteriores)
+
+   Citar fuentes de la lista proporcionada (RFCs, artículos, etc.) dentro
+   del texto para respaldar tus afirmaciones técnicas. Pueden ser fuentes
+   cubiertas en clase o no.
+
+   Incluir sección de referencias al final.
+
+** Criterios de evaluación (ítems puntuados de 0 a 10, promedio simple)
+
+- Diagrama de red (1.5 puntos) :: completo, sin errores, claro.
+
+- Análisis de ataques (2.5 puntos) :: cubre 3 capas con ataques relevantes,
+  bien descritos y justificados.
+
+- Mitigaciones (3.0 puntos) :: con parámetros correctos, capa, impacto y
+  responsable.
+
+- Riesgos residuales + pregunta abierta (1.5 puntos) :: riesgos concretos
+  diferenciados por ámbito; respuestas con argumentos técnicos.
+
+- Redacción y formato (1 punto) :: extensión ≤5 páginas, estructura clara,
+  ortografía correcta, legibilidad general
+
+- Sustentación bibliográfica (0.5 puntos) :: citas pertinentes dentro del
+  texto y sección de referencias bien organizada.

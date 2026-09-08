@@ -47,3 +47,27 @@ UDP: Protocolo sin handshake.
     junio 2026)
   - Barrer los puertos UDP es /diferente/: [[https://nmap.org/book/scan-methods-udp-scan.html][Documentación sobre «UDP Scan»
     de nmap]]
+
+* 2026.09.08
+- Revisión hasta este punto • /«Computación en la nube»/ como contexto
+  transversal (→ Discusión guiada por los alumnos 🙃)
+- *Tarea/entrega*: [[../../entregas/analisis_red_hibrida/][Análisis de seguridad de una arquitectura de red
+  corporativa híbrida]]
+- *¡Cambio de planes!* Por fuerza mayor, la visita al centro de datos del
+  [[https://lamod.unma.mx/][Laboratorio de Modelos y Datos de la UNAM]] se reprograma: Vamos a ir el
+  día /jueves 17 de septiembre/.
+
+** ¡Iniciamos con la unidad 2! Análisis de protocolos I: texto sobre TCP
+- SMTP: Puertos TCP {25, 485, 587}
+  - Comandos /verbatim/
+  - Análisis de encabezados
+  - Spoofing
+  - Open relays
+  - STARTTLS vs. SMTPS
+
+** Referencias
+- SMTP: [[https://www.rfc-editor.org/info/rfc821/][RFC 821]]; [[https://www.rfc-editor.org/info/rfc2821/][RFC 2821]]; [[https://www.rfc-editor.org/info/rfc5321/][RFC 5321]]
+  - STARTTLS: [[https://www.rfc-editor.org/info/rfc3207][RFC 3207]]
+  - SMTP Submission: [[https://www.rfc-editor.org/info/rfc6409/][RFC 6409]]
+  - SMTPS: [[https://www.rfc-editor.org/info/rfc8314/][RFC 8314]]: TLS implícito para SMTP /desde el establecimiento de
+    sesión/
