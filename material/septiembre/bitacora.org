@@ -59,11 +59,7 @@ UDP: Protocolo sin handshake.
 
 ** ¡Iniciamos con la unidad 2! Análisis de protocolos I: texto sobre TCP
 - SMTP: Puertos TCP {25, 485, 587}
-  - Comandos /verbatim/
-  - Análisis de encabezados
-  - Spoofing
-  - Open relays
-  - STARTTLS vs. SMTPS
+  - Lógica y comandos básicos
 
 ** Referencias
 - SMTP: [[https://www.rfc-editor.org/info/rfc821/][RFC 821]]; [[https://www.rfc-editor.org/info/rfc2821/][RFC 2821]]; [[https://www.rfc-editor.org/info/rfc5321/][RFC 5321]]
@@ -71,3 +67,21 @@ UDP: Protocolo sin handshake.
   - SMTP Submission: [[https://www.rfc-editor.org/info/rfc6409/][RFC 6409]]
   - SMTPS: [[https://www.rfc-editor.org/info/rfc8314/][RFC 8314]]: TLS implícito para SMTP /desde el establecimiento de
     sesión/
+- Formato de encabezados de correo: [[https://www.rfc-editor.org/info/rfc822/][RFC 822]]; [[https://www.rfc-editor.org/info/rfc2822/][RFC 2822]]; [[https://www.rfc-editor.org/info/rfc5322/][RFC 5322]]
+
+* 2026.09.10
+
+** Temas
+- SMTP: Aspectos relativos a la seguridad
+  - El correo y los encabezados
+  - Spoofing
+  - Open relays
+  - Cifrado: STARTTLS vs. SMTPS
+
+** Referencias
+- SMTP: [[https://www.rfc-editor.org/info/rfc821/][RFC 821]]; [[https://www.rfc-editor.org/info/rfc2821/][RFC 2821]]; [[https://www.rfc-editor.org/info/rfc5321/][RFC 5321]]
+  - STARTTLS: [[https://www.rfc-editor.org/info/rfc3207][RFC 3207]]
+  - SMTP Submission: [[https://www.rfc-editor.org/info/rfc6409/][RFC 6409]]
+  - SMTPS: [[https://www.rfc-editor.org/info/rfc8314/][RFC 8314]]: TLS implícito para SMTP /desde el establecimiento de
+    sesión/
+- Formato de encabezados de correo: [[https://www.rfc-editor.org/info/rfc822/][RFC 822]]; [[https://www.rfc-editor.org/info/rfc2822/][RFC 2822]]; [[https://www.rfc-editor.org/info/rfc5322/][RFC 5322]]
