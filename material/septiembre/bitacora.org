@@ -104,6 +104,10 @@ UDP: Protocolo sin handshake.
   - [[../../entregas/analisis_red_hibrida/Abraham_Analisis_red.md][Abraham Medina]]
   - [[../../entregas/analisis_red_hibrida/SIIMAS_Victor.pdf][Victor Peña]]
   - [[../../entregas/analisis_red_hibrida/AxelRuiz.pdf][Axel Ruiz]]
+  - Extemporáneas:
+    - [[../../entregas/analisis_red_hibrida/AnalisisRedHibridaCarlosCabrera.pdf][Carlos Cabrera]]
+
+* 2026.09.24
 ** Controlando al spam a nivel servidores: SPF, DKIM, DMARC
 - Papel de los tres componentes administrados como parte del registro DNS
   del (sub?)dominio:
@@ -114,13 +118,17 @@ UDP: Protocolo sin handshake.
     servidores no autorizados generan =fail=), =~all= (generan =softfail=),
     =+all= (generan =pass=, básicamente inutilizando el mecanismo).
 
-    =$ dig +short gwolf.org TXT=
-    ="google-site-verification=4heL8E7uAUgEMrpvDTS1GfA6LvLD07EfRlIb4sq2dIc"=
-    ="v=spf1 ip4:132.248.241.1 ip4:132.248.72.73 ip4:132.248.72.123 a mx ~all"=
+    #+begin_src sh
+      $ dig +short gwolf.org TXT
+      "google-site-verification=4heL8E7uAUgEMrpvDTS1GfA6LvLD07EfRlIb4sq2dIc"
+      "v=spf1 ip4:132.248.241.1 ip4:132.248.72.73 ip4:132.248.72.123 a mx ~all"
+    #+end_src
 
-    =$dig +short unam.mx TXT=
-    ="_euprn2dycblg2aqnmpfa3bh09u4rigr"
-    ="v=spf1 ip4:132.247.28.137 ip4:132.247.190.11 ip4:132.248.10.70 ip4:132.248.10.100 ip4:132.248.165.142 ip4:132.248.165.143 ip4:132.248.165.144 ip4:132.248.165.145 ip4:132.248.165.146 ip4:132.248.165.149 ip4:132.248.165.150 " " ip4:132.248.165.151 ip4:132.248.165.152 ip4:132.248.165.153 ip4:132.248.165.154 ip4:132.248.10.3 ip4:132.248.10.4 include:spf.protection.outlook.com -all"=
+    #+begin_src sh
+      $ dig +short unam.mx TXT
+      "_euprn2dycblg2aqnmpfa3bh09u4rigr"
+      "v=spf1 ip4:132.247.28.137 ip4:132.247.190.11 ip4:132.248.10.70 ip4:132.248.10.100 ip4:132.248.165.142 ip4:132.248.165.143 ip4:132.248.165.144 ip4:132.248.165.145 ip4:132.248.165.146 ip4:132.248.165.149 ip4:132.248.165.150 " " ip4:132.248.165.151 ip4:132.248.165.152 ip4:132.248.165.153 ip4:132.248.165.154 ip4:132.248.10.3 ip4:132.248.10.4 include:spf.protection.outlook.com -all"
+    #+end_src
   - DKIM :: /Domain Keys Identified Mail/.
 
     Los servidores de correo generan una firma criptográfica para todos los
@@ -129,11 +137,15 @@ UDP: Protocolo sin handshake.
     servidores de listas 🙁). Requiere conocer el /selector/, que permite a
     una organización segmentar su correo en varios servidores.
 
-    =$ dig +short default._domainkey.gwolf.org TXT=
-    ="v=DKIM1; h=sha256; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxqm/elCMdc2NoMh+7WAmb0MZyXSXYuLEtiIOi3pSpcDf7Dm+/a6p4Alp+hjTJ+NljvW0ibjeKYH62aqGHHHpof659KJkykCdgyd0vB/zHnhQ/K4328YcAFmReFZyFcsCGBR9kwvIIbj6oj8vNForh4YKBr8HDhUOAOghsp4RzNgvpchSkKr5HFi" "PdZzgfxPl8Cf1ZXBrPW11pt2b0xOsposjawjyvceaxGJbEQ7/kk7DjGQCqrUsNQxs9gPo94NwxgN5qHVDXlHSdYQfVfHQMJs1sg1DIDEkotVRpIwy4lsO0KmeWjfnCyxozMsEa0nXG0eMZgarEF4KLH96EwS5qQIDAQAB"=
+    #+begin_src sh
+      $ dig +short default._domainkey.gwolf.org TXT
+      "v=DKIM1; h=sha256; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxqm/elCMdc2NoMh+7WAmb0MZyXSXYuLEtiIOi3pSpcDf7Dm+/a6p4Alp+hjTJ+NljvW0ibjeKYH62aqGHHHpof659KJkykCdgyd0vB/zHnhQ/K4328YcAFmReFZyFcsCGBR9kwvIIbj6oj8vNForh4YKBr8HDhUOAOghsp4RzNgvpchSkKr5HFi" "PdZzgfxPl8Cf1ZXBrPW11pt2b0xOsposjawjyvceaxGJbEQ7/kk7DjGQCqrUsNQxs9gPo94NwxgN5qHVDXlHSdYQfVfHQMJs1sg1DIDEkotVRpIwy4lsO0KmeWjfnCyxozMsEa0nXG0eMZgarEF4KLH96EwS5qQIDAQAB"
+    #+end_src
 
-    =$dig +short rsmtp01._domainkey.unam.mx TXT=
-    ="v=DKIM1; h=sha256; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDNHX2iVI9biN3jO/MNPAEpfSofUBRqW5ceEB+6OYEe5DMwAiG9WrDW4dRK11+OrDDLkiBwScRJCNyY87XFQC3K1+j1BJPSnpv5gQ2/IxlEbMFKjQ+PQE7kpIZssEM9XELaB8GqeZZfKIGfsY7PGoiJk9RIENbBNTTD+EeDXs66kwIDAQAB"=
+    #+begin_src sh
+      $ dig +short rsmtp01._domainkey.unam.mx TXT
+      "v=DKIM1; h=sha256; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDNHX2iVI9biN3jO/MNPAEpfSofUBRqW5ceEB+6OYEe5DMwAiG9WrDW4dRK11+OrDDLkiBwScRJCNyY87XFQC3K1+j1BJPSnpv5gQ2/IxlEbMFKjQ+PQE7kpIZssEM9XELaB8GqeZZfKIGfsY7PGoiJk9RIENbBNTTD+EeDXs66kwIDAQAB"
+    #+end_src
   - DMARC :: /Domain-based Message Authentication Reporting and
     Conformance/.
 
@@ -141,8 +153,27 @@ UDP: Protocolo sin handshake.
     indicar a servidores receptores si deben entregar, rechazar, o /poner
     en cuarentena/ a los correos que /fallen/ SPF o DKIM.
 
-    =dig +short _dmarc.gwolf.org TXT=
-    ="v=DMARC1; p=none; rua=mailto:postmaster@gwolf.org; ruf=mailto:postmaster@gwolf.org; rf=afrf; sp=reject; fo=1; adkim=r; aspf=r"=
+    #+begin_src sh
+      $ dig +short _dmarc.gwolf.org TXT
+      "v=DMARC1; p=none; rua=mailto:postmaster@gwolf.org; ruf=mailto:postmaster@gwolf.org; rf=afrf; sp=reject; fo=1; adkim=r; aspf=r"
+    #+end_src
 
-    =$ dig +short _dmarc.unam.mx TXT=
-    ="v=DMARC1; p=none; rua=mailto:rua_dmarc@unam.mx; ruf=mailto:reporterua_dmarc@unam.mx; fo=0:1;"=
+    #+begin_src sh
+      $ dig +short _dmarc.unam.mx TXT
+      "v=DMARC1; p=none; rua=mailto:rua_dmarc@unam.mx; ruf=mailto:reporterua_dmarc@unam.mx; fo=0:1;"
+    #+end_src
+
+** Referencias
+- Documentación general sobre SPF/DKIM/DMARC
+  - [[https://gmail.com/postmaster][Google Postmaster Tools]]
+  - Google workspace Help ‣ Administrators ‣ Security and data protection ‣
+    [[https://knowledge.workspace.google.com/admin/security/set-up-dmarc?visit_id=639258608468475067-1218910791&rd=1][Set up DMARC]]
+  - URIports.com → [[https://www.learndmarc.com/][Learn and Test DMARC Console]] una bonita simulación
+    animada que ilustra qué parte entra en juego en qué momento con estas
+    tres herramientas
+  - Para verificar la configuración de diversos parámetros de un servidor
+    SMTP: https://mxtoolbox.com/emailhealth
+- Buscadores en RBLs para determinar la /reputación/ de un servidor de
+  correo:
+  - [[http://multirbl.valli.org/lookup/][MultiRBL.valli.org]]
+  - [[https://mxtoolbox.com/SuperTool.aspx][MX Toolbox: SuperTool]] → “Blacklist”
