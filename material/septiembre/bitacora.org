@@ -186,13 +186,6 @@ UDP: Protocolo sin handshake.
   - Verbos
   - Partes de la respuesta: RFC822
   - Estados de respuesta
-  - Encabezados fundamentales
-  - Evolución de las “consideraciones de seguridad”
-- HTTP y el cifrado
-  - SSL/TLS
-  - HSTS
-- Acelerando HTTP: Técnicas introducidas en 1.1, 2.0, 3.0
-
 
 ** Referencias
 - RFCs
@@ -202,20 +195,29 @@ UDP: Protocolo sin handshake.
     - 1.1 ([[https://www.rfc-editor.org/info/rfc2616/][RFC 2616]], 1997/1999, + actualizaciones)
     - 2 ([[https://www.rfc-editor.org/info/rfc9113/][RFC 9113]], 2011)
     - 3 ([[https://www.rfc-editor.org/info/rfc9114/][RFC 9114]], 2022)
-  - Cifrado
-    - SSL (≈1996–2011): [[https://www.rfc-editor.org/info/rfc6101/][RFC 6101]] (retrospectivo)
-    - TLS 1.3 (1999–): [[https://www.rfc-editor.org/info/rfc9846/][RFC 9846]]
-    - HTTP over TLS: [[https://www.rfc-editor.org/info/rfc2818/][RFC 2818]]
-    - HSTS ([[https://www.rfc-editor.org/info/rfc6797/][RFC 6797]]), HTTP Strict Transport Security
 - Informal: [[https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Evolution_of_HTTP][Evolution of HTTP]], bonito y completo artículo explicando la
   evolución del conjunto de protocolos (y por qué conviven las tres últimas
   versiones mayores).
-- [[https://link.springer.com/chapter/10.1007/978-3-031-19439-9_9][Security of HTTP]] (Jörg Schwenk, 2022). En “Guide to Internet
-  Cryptography: Security Protocols and Real-World Attack Implications”
-  (Springer)
-- [[https://ieeexplore.ieee.org/abstract/document/11053257][An investigation on HTTP/2 Security]] (Meenkshi Suresh; P. P. Amritha;
-  Ashok Kumar Mohan; V. Anil Kumar 2018) Journal of Cyber Security and
-  Mobility, IEEE
-- [[https://ieeexplore.ieee.org/abstract/document/10427406][Security and Service Vulnerabilities with HTTP/3]] (Hari Hara Sudhan S;
-  Sameer G. Kulkarni 2024) 16th International Conference on COMmunication
-  Systems & NETworkS (COMSNETS)
+
+* 2026.09.29
+** Temas
+  - Algunos encabezados fundamentales
+  - Captura de paquetes: HTTP/1.1, HTTP/2, HTTP/3
+    - Nos /topamos con pared/: tanto HTTP/2 como HTTP/3 requieren canal
+      cifrado
+      - Captura de paquetes con =tcpdump= y análisis con =wireshark= ⇒ No
+        alcanzamos a ver nada 🙁
+  - Evolución de las “consideraciones de seguridad”
+  - HTTP y el cifrado
+    - SSL/TLS
+    - HSTS
+  - Acelerando HTTP: Técnicas introducidas en 1.1, 2.0, 3.0
+
+** Referencias
+- RFCs
+  - Versiones de HTTP
+    - 0.9 (1991, /the one-line protocol/; no-estandarizado)
+    - 1.0 ([[https://www.rfc-editor.org/info/rfc1945/][RFC 1945]], 1996),
+    - 1.1 ([[https://www.rfc-editor.org/info/rfc2616/][RFC 2616]], 1997/1999, + actualizaciones)
+    - 2 ([[https://www.rfc-editor.org/info/rfc9113/][RFC 9113]], 2011)
+    - 3 ([[https://www.rfc-editor.org/info/rfc9114/][RFC 9114]], 2022)

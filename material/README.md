@@ -4,5 +4,5 @@
 - Bitácoras de cursado:
   - [Agosto](./agosto/bitacora.org)
   - [Septiembre](./septiembre/bitacora.org)
-  - Octubre
+  - [Octubre](./octubre/bitacora.org)
   - Noviembre
