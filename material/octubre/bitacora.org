@@ -115,3 +115,6 @@ Algunos artículos relativos a las vulnerabilidades /use-after-free/:
   (Byoungyoung Lee et al. 2015)
 - [[https://dl.acm.org/doi/abs/10.1145/3548606.3560625][DangZero: Efficient Use-After-Free Detection via Direct Page Table Access]]
   (Floris Gorter et al. 2022)
+
+Una prueba de concepto de ataque con una explicación que se ve completa /
+interesante (no la hemos leído aún a detalle): [[https://jackalsyn.com/posts/php-up-2026.html][Jackalsyn: PHP-UP-2026]]
