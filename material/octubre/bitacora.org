@@ -39,3 +39,79 @@
   Systems & NETworkS (COMSNETS)
 - [[Https://trepo.tuni.fi/bitstream/handle/10024/231552/EshaSyeda.pdf?sequence=2#6#6][Features and Operation of HTTP Versions]] (tesis de maestría de Syeda
   Samiha Islam Esha, 2025). Tampere University.
+
+* 2026.10.08
+
+* 2026.10.13 y 2026.10.15
+
+No hubo clase: Estuve fuera de México, participando en el congreso
+[[https://fie-conference.org/2026][Frontiers In Education (FIE) 2026]]. Los alumnos desarrollaron un ejercicio
+de [[../../entregas/salta_LLM/README.md][ataque (autorizado) a un LLM]].
+
+* 2026.10.20
+
+Discusión respecto al ataque a los LLMs que desarrollaron.
+
+Similitudes entre el ataque a los LLMs con /prompts adversariales/ y otros
+ataques a diversos sistemas: particularmente, el que el /camino/ de los
+datos y de las instrucciones es el mismo. (ver: analogía de las
+/costuras/).
+
+Repasamos brevemente los /ataques de amplificación/, particularmente los
+que se realizan sobre UDP (→ DDoS; por ejemplo, utilizando DNS)
+
+* 2026.10.22
+
+Esta semana fue muy prolífica en temas de seguridad informática. Discutamos
+respecto a las últimas noticias:
+
+** Correcta gestión de certificados
+
+Hemos hablado acerca de la importancia de la fortaleza de las llaves
+privadas. ¿Qué pasa cuando una llave privada que supuestamente es de buena
+longitud... no lo es?
+
+Salieron a la luz una serie de [[https://groups.google.com/a/mozilla.org/g/dev-security-policy/c/0R3XLJL6FuE/m/0XofdebrAAAJ?pli=1][certificados /intermedios/ ridículamente
+débiles]] vinculados con la autoridad certificadora /eMudhra/. Esto abre a un
+potencial de abuso... mucho más grande que un simple MitM
+
+- [[https://lwn.net/Articles/1101643/#Comments][LWN: eMudhra intermediate CA compromise]]
+- [[https://www.helpnetsecurity.com/2026/10/21/emudhra-certificates-private-keys-compromised/][helpNetSecurity: eMudhra security blunder left trusted CA signing keys
+  exposed to anyone]]
+- [[https://thehackernews.com/2026/10/eight-emudhra-ca-keys-compromised.html][The Hacker News: Eight eMudhra CA Keys Compromised, Triggering Emergency
+  Fixes Across Browsers and Software]]
+- [[https://cabforum.org/working-groups/server/baseline-requirements/requirements/][CA/Browser Forum: Latest baseline requirements]]
+
+** Vulnerabilidades de /alto impacto/ en PHP
+
+El martes 20 por la tarde se anunció que se estaba preparando una
+/divulgación coordinada/ para una actualización de emergencia de PHP, para
+las 14:00 UTC del miércoles 21.
+
+Como era de esperarse (tristemente), los ataques comenzaron a darse a
+conocer antes de la hora acordada, llevando a la necesidad de una
+actualización de emergencia descoordinada. Esta vulnerabilidad se conoce
+como [[https://www.php2shell.com/][PHP2Shell]], y se le asignaron los CVEs [[https://nvd.nist.gov/vuln/detail/cve-2026-109618][CVE-2026-109618]] y
+[[https://nvd.nist.gov/vuln/detail/cve-2026-109619][CVE-2026-109619]], con severidad CVSS 9.2 “critical”.
+
+Ambos ataques provienen de errores de manejo de memoria: /uso de una región
+de memoria después de liberarla/ (/use-after-free/).
+
+- [[https://ma.ttias.be/php-cve-2026-109618-early-mitigation/][PHP CVE-2026-109618 and CVE-2026-109619: early mitigation steps]], de
+  Mattias Geniar: Explicación de los bugs en cuestión y ayuda para mitigar
+  / corregir el problema.
+- [[https://github.com/eness/php2shell-CVE-2026-109618-CVE-2026-109619-PoC][Prueba de concepto (PoC) de explotación]]
+- [[https://community.owasp.org/vulnerabilities/Using_freed_memory][OWASP: Using freed memory]]
+- [[https://learn.snyk.io/lesson/use-after-free/?ecosystem=cpp][Use after free]], tutorial sencillo para entender el tipo de ataque (Snyk
+  Learn)
+- [[https://cybersecuritynews.com/use-after-free-vulnerability/][What is Use-After-Free Vulnerability? – Impact and Mitigation]], otro
+  tutorial sencillo (Cybersecurity News)
+
+Algunos artículos relativos a las vulnerabilidades /use-after-free/:
+
+- [[https://dl.acm.org/doi/abs/10.1145/2338965.2336769][Undangle: early detection of dangling pointers in use-after-free and
+  double-free vulnerabilities]] (Juan Caballero et al. 2012)
+- [[https://wenke.gtisc.gatech.edu/papers/dangnull.pdf][Preventing Use-after-free with Dangling Pointers Nullification]]
+  (Byoungyoung Lee et al. 2015)
+- [[https://dl.acm.org/doi/abs/10.1145/3548606.3560625][DangZero: Efficient Use-After-Free Detection via Direct Page Table Access]]
+  (Floris Gorter et al. 2022)
