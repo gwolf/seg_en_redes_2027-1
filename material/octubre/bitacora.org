@@ -118,3 +118,30 @@ Algunos artículos relativos a las vulnerabilidades /use-after-free/:
 
 Una prueba de concepto de ataque con una explicación que se ve completa /
 interesante (no la hemos leído aún a detalle): [[https://jackalsyn.com/posts/php-up-2026.html][Jackalsyn: PHP-UP-2026]]
+
+* 2026.10.26
+
+** Temas
+- La vulnerabilidad anterior que discutimos de PHP: ¿Vale todo el ruido que
+  causó? “I want my Wednesday back”...
+
+- Comenzamos abordando el tema de /redes superpuestas/: Cuando una capa /x/
+  de red transporta sobre de sí a una capa /inferior/ (/x-n/)
+  - Ejemplos: una VPN, en que podemos tener incluso transporte de capa 2
+    (/link-layer/) sobre aplicación, sobre TLS, sobre TCP, sobre IP
+- Redes superpuestas que permiten /vulnerar políticas de uso/ de redes
+  - Ejemplo: =iodine=
+- Redes superpuestas para el /anonimato/: la red Tor
+  - Ataques a la red Tor: MITM para captura de sesiones ssh, 2026 (ver:
+    “How I got over 300 Tor exit nodes removed”)
+
+** Referencias
+- [[https://blog.luitjes.it/posts/i-want-my-wednesday-back/][I want my Wednesday back]]
+- [[https://www.geeksforgeeks.org/system-design/network-overlays-in-distributed-systems/][Network Overlays in Distributed Systems]] (/Geeks for Geeks/, 2025)
+- [[https://code.kryo.se/iodine/][Iodine]]: IP sobre DNS
+- [[https://medium.com/@rogergalo/learn-how-easy-is-to-bypass-firewalls-using-dns-tunneling-and-also-how-to-block-it-3ed652f4a000][Learn how easy is to bypass firewalls using DNS tunneling (and also how
+  to block it)]] (Roger Galobardes, /Medium/, 2018)
+- [[https://priv-anon.unam.mx/assets/mecanismos_priv_anon.pdf][Tor: La privacidad en Internet en la era de la Gran Vigilancia]] (Roger
+  Dingledine, p. 77, en el libro “Mecanismos de privacidad y anonimato: una
+  visión transdisciplinaria, 2021)
+- [[https://kaba.cx/posts/20261020_Tor/][How I got over 300 Tor exit nodes removed]], Kaba, 20/oct/2026
