@@ -119,7 +119,7 @@ Algunos artículos relativos a las vulnerabilidades /use-after-free/:
 Una prueba de concepto de ataque con una explicación que se ve completa /
 interesante (no la hemos leído aún a detalle): [[https://jackalsyn.com/posts/php-up-2026.html][Jackalsyn: PHP-UP-2026]]
 
-* 2026.10.26
+* 2026.10.27
 
 ** Temas
 - La vulnerabilidad anterior que discutimos de PHP: ¿Vale todo el ruido que
@@ -145,3 +145,15 @@ interesante (no la hemos leído aún a detalle): [[https://jackalsyn.com/posts/p
   Dingledine, p. 77, en el libro “Mecanismos de privacidad y anonimato: una
   visión transdisciplinaria, 2021)
 - [[https://kaba.cx/posts/20261020_Tor/][How I got over 300 Tor exit nodes removed]], Kaba, 20/oct/2026
+
+* 2026.10.29
+
+** Temas
+- Planteamiento general y explicación a grandes rasgos del protocolo de
+  videoconferencia /WebRTC/
+  - Nos enfocamos en la implementación de /Jitsi/
+- Protocolos empleados para cruzar /barreras/ NAT: /STUN/, /TURN/
+
+** Referencias
+- [[https://www.derechosdigitales.org/wp-content/uploads/webrtc_es.pdf][No es magia: Interfaces y protocolos para las videollamadas]], Derechos
+  Digitales, 2020
