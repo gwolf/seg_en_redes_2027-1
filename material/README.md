@@ -5,4 +5,4 @@
   - [Agosto](./agosto/bitacora.org)
   - [Septiembre](./septiembre/bitacora.org)
   - [Octubre](./octubre/bitacora.org)
-  - Noviembre
+  - [Noviembre](./noviembre/bitacora.org)

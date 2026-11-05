@@ -1,0 +1,24 @@
+#+title: Bitácora de clases: Octubre 2026
+#+options: toc:1,num:nil
+
+* 2026.11.03
+** Temas
+- Profundizamos un poco más en /WebRTC/ y, en particular, en la
+  implementación de /Jitsi/.
+  - Para que las videoconferencias funcionen en redes con NAT: los
+    protocolos TURN y STUN
+
+** Referencias
+- [[https://www.derechosdigitales.org/wp-content/uploads/webrtc_es.pdf][No es magia: Interfaces y protocolos para las videollamadas]], Derechos
+  Digitales 2020
+- RFC 8489: [[https://www.rfc-editor.org/info/rfc8489/][Session Traversal Utilities for NAT (STUN)]] (2020; derivado de
+  [[https://www.rfc-editor.org/info/rfc3489/][RFC 3489]], 2003)
+- RFC 8656: [[https://www.rfc-editor.org/info/rfc8656/][Traversal Using Relays around NAT (TURN): Relay Extensions to
+  Session Traversal Utilities for NAT (STUN)]] (2020; derivado de [[https://www.rfc-editor.org/info/rfc5766/][RFC
+  5766]], 2010
+- [[https://www.videosdk.live/developer-hub/voip/stun-voip][STUN VoIP Explained: NAT Traversal for Reliable Calls]] (2026),
+  expllicación tipo tutorial de los tipos de NAT y el papel que juegan
+  STUN, TURN e ICE para establecer una comunicación bidireccional
+  multimedia
+
+
