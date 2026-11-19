@@ -22,3 +22,41 @@
   multimedia
 
 
+* 2026.11.05
+
+* 2026.11.10 y 2026.11.12
+** Temas
+Se celebró el Primer [[https://mcyra2026.unam.mx/][Congreso Académico Mexicano de Ciberseguridad (MCyRA)]];
+la actividad de clase fue asistir al congreso.
+
+- [[https://mcyra2026.unam.mx/program][Programa de actividades y sesiones]]
+- [[https://link.springer.com/book/10.1007/978-3-032-42770-0][Volumen de memorias]]
+
+* 2026.11.17
+
+** Temas
+- Discutimos los temas que más llamaron la atención de los alumnos durante
+  el [[https://mcyra2026.unam.mx/][MCyRA]]
+
+* 2026.11.19
+** Temas
+Fundamentos de sistemas de detección de intrusos
+- Sistemas IDS
+  - Distinción HIDS / NIDS
+  - Detección basada en patrones (firmas)
+  - Detección basada en comportamiento (anomalías)
+- Estrategias de monitoreo / puntos de monitoreo
+  - /«Norte-Sur»/ (entre la red interna y el exterior)
+    - Monitoreo perimetral
+    - Es fácil detectar comportamiento anómalo (exitoso o no)
+    - Ceguera al movimiento lateral
+  - /«Este-Oeste»/ (entre servidores y aplicaciones dentro del mismo
+    dominio de confianza de la red)
+    - Enfocado en movimiento lateral
+    - Busca exfiltración de datos, uso de protocolos inseguros
+    - Patrones de comunicación habitual, predicción de anomalías en la
+      comunicación
+- Análisis de correlación
+- Tipos de respuesta
+  - Automatizada, basada en /playbooks/ y escalación
+  - Manual
