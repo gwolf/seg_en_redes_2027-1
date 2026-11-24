@@ -21,8 +21,13 @@
   STUN, TURN e ICE para establecer una comunicación bidireccional
   multimedia
 
-
 * 2026.11.05
+** Temas
+- Análisis de /lo que se alcanza a apreciar/ mediante una captura de
+  paquetes (=pcap=)
+  - Ventajas y limitaciones de las herramientas de análisis de paquetes
+    (Wireshark, termshark / tshark)
+  - Herramientas en línea de análisis de paquetes
 
 * 2026.11.10 y 2026.11.12
 ** Temas
