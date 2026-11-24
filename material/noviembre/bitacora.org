@@ -1,4 +1,4 @@
-#+title: Bitácora de clases: Octubre 2026
+#+title: Bitácora de clases: Noviembre 2026
 #+options: toc:1,num:nil
 
 * 2026.11.03
