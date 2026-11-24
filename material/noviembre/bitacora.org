@@ -60,3 +60,46 @@ Fundamentos de sistemas de detección de intrusos
 - Tipos de respuesta
   - Automatizada, basada en /playbooks/ y escalación
   - Manual
+
+* 2026.11.24
+
+** Temas
+Seguimos hablando de sistemas de detección de intrusos:
+- SIEM (Security Information and Event Management): Plataformas que
+  centralizan, correlacionan y analizan registros y eventos de seguridad
+  generados en toda la infraestructura de la organización.
+  - Funciones principales: Agregación de logs, correlación, alertas e
+    incidentes, visibilidad centralizada.
+  - Relación / avance SIEM → SOAR (Security Orchestration, Automation and
+    Response): Mientras SIEM detecta y correlaciona, SOAR ejecuta acciones
+    de forma (¿semi?)automatizada.
+  - Tendencia a convergencia a SIEM+SOAR integrados, incorporando agentes
+    ML
+  - “Fatiga de alertas”; ML para detección de anomalías
+- Honeypots — recurso de seguridad cuyo valor reside en ser probado,
+  atacado o comprometido. El tráfico legítimo no debería interactuar con él
+  → cualquier interacción es sospechosa por defecto
+  - Distinción: honeypot (sistema individual) / honeynet (red de honeypots)
+    / honeytoken (credencial señuelo)
+  - Desarrollo histórico: antecedentes con /Cuckoo's Egg/, /An Evening with
+    Berferd/; sistemas aislados y de baja interacción (2000s); alta
+    interacción y honeynets (2005–2015); híbridos, distribuidos e
+    inteligentes (2018–)
+  - Riesgos, ética y operación de honeypots; riesgo de pivote, riesgo legal
+    de /decepción activa/
+
+** Referencias
+- [[https://www.secureworld.io/industry-news/rebuilding-modern-soc][Beyond the Status Quo: Rebuilding the Modern SOC for 2026]] (Cam Sivesind,
+  Secureworld, 2026)
+- [[https://www.sciencedirect.com/science/article/pii/S0140366426001556][Collaborative privacy-preserving network intrusion detection: A federated
+  multi-agent reinforcement learning approach]] (Tellache, Korba, Mokhtari,
+  Gharmi-Doudane, 2026) Computer Communications, Science Direct
+- [[https://web.eecs.umich.edu/~aprakash/security/handouts/berferd.pdf][An Evening with Berferd In Which a Cracker is Lured, Endured, and
+  Studied]] (Bill Cheswick, AT&T/Bell 1994)
+- [[https://www.sciencedirect.com/science/article/abs/pii/S1353485807700041#1][Honeynets: a tool for counterintelligence in online security]]
+  (Watson, 2007) Network Security
+- [[https://ieeexplore.ieee.org/document/10717237#1][Analysis, Trends, and Utilization of Security Information and Event
+  Management (SIEM) in Critical Infrastructures]] (Sashwin, Nithika,
+  Priyadharshini, Maduvant, Saranya 2024)
+- [[https://ieeexplore.ieee.org/document/11582879#1][Comprehensive Survey of Security Information and Event Management (SIEM)
+  Systems]] (Yatin Lakkaraju; Gaurav Prasad; Akash Sarma 2026)
