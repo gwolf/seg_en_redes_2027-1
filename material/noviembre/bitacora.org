@@ -108,3 +108,6 @@ Seguimos hablando de sistemas de detección de intrusos:
   Priyadharshini, Maduvant, Saranya 2024)
 - [[https://ieeexplore.ieee.org/document/11582879#1][Comprehensive Survey of Security Information and Event Management (SIEM)
   Systems]] (Yatin Lakkaraju; Gaurav Prasad; Akash Sarma 2026)
+- [[https://www.sciencedirect.com/science/article/pii/S1084804525001936][Unveiling cybersecurity mysteries: A comprehensive survey on digital
+  forensics trends, threats, and solutions in network security]] (Arif,
+  Camacho, Park 2025) Journal of Network and Computer Applications
